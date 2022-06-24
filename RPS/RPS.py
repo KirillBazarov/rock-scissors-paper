@@ -1,7 +1,6 @@
 # Импорт для def computer_choice
 from random import randint
 
-
 RPS = {
     1: "Камень",
     2: "Ножницы",
@@ -82,9 +81,8 @@ def play() -> None:
 
 def main() -> None:
     print(hello_and_question)  # Приветствие
+    m = Player(input('Введи свои имя или никнейм(Это нужно для статистики)\n'))
     play_again = ''  # Что бы запустить игру. Потом его изменить и выйти.
-    name = input('Введи свои имя или никнейм(Это нужно для статистики)')
-    print(name)
     while play_again.lower() != '-':  # проверка на выход из игры работает после 2-го раза
         play()  # запуск игры
         play_again = input("Хочешь сыграть еще раз (если нет то введи - ) ")
@@ -92,4 +90,14 @@ def main() -> None:
         print("\nудачи!")
 
 
-main()
+class Player:
+    def __init__(self, name):
+        self.name = name
+        self.vibor_igroka = players_choice()
+
+
+# Выбор игрока
+
+print(main())
+
+# можно попробовать создать класс игры и что бы эти функции его меняли!!!
