@@ -1,6 +1,7 @@
 # Импорт для def computer_choice
 from random import randint
 
+
 RPS = {
     1: "Камень",
     2: "Ножницы",
@@ -11,11 +12,9 @@ hello_and_question = '''
 '''
 # choosing_how_many_rounds = "Теперь нужно определить сколько раундов будем играть(1 или 3)."
 rules = '''Победитель определяется по следующим правилам:
-
 1. Бумага побеждает камень («бумага обёртывает камень»).
 2. Камень побеждает ножницы («камень затупляет или ломает ножницы»).
 3. Ножницы побеждают бумагу («ножницы разрезают бумагу»).
-
 Если игроки показали одинаковый знак, то засчитывается ничья и игра или раунд переигрывается.'''
 
 
@@ -31,7 +30,7 @@ def players_choice() -> int:
         print(f"Ты выбрал {RPS.get(player_chose)}")
         return player_chose
     else:
-        print("Ты ввел не число)))")
+        print("Ты ввел не то число)))")
 
 
 # Дает случайное число от 1 до 3. Которое обозначает камень, ножницы или бумагу.
@@ -46,7 +45,7 @@ def computer_choice() -> int:
 
 # Функция находит победителя
 # Просто огромное кол-во иф(другой способ слишком сложно искать)
-def search_winner(player_choice, computer_chose):
+def search_winner(player_choice, computer_chose) -> None:
     if player_choice == computer_chose:
         print("Ничья")
     elif player_choice == 1 and computer_chose == 2:
@@ -75,13 +74,13 @@ def search_winner(player_choice, computer_chose):
         """)
 
 
-def play():
+def play() -> None:
     if input("") == "1":
         print(rules)
     search_winner(players_choice(), computer_choice())
 
 
-def main():
+def main() -> None:
     print(hello_and_question)  # Приветствие
     play_again = ''  # Что бы запустить игру. Потом его изменить и выйти.
     name = input('Введи свои имя или никнейм(Это нужно для статистики)')

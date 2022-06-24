@@ -17,5 +17,5 @@ meta.create_all(engine)
 
 conn = engine.connect()
 
-add_game_data = statistics.insert().values(name, player_chose, computer_chose)
+add_game_data = statistics.insert().values()
 conn.execute(add_game_data)
