@@ -9,7 +9,6 @@ RPS = {
 hello_and_question = '''
 Приветствую в КМН! Ты помнишь правила или тебе их напомнить? (Если нужно напомнить напиши 1) 
 '''
-# choosing_how_many_rounds = "Теперь нужно определить сколько раундов будем играть(1 или 3)."
 rules = '''Победитель определяется по следующим правилам:
 1. Бумага побеждает камень («бумага обёртывает камень»).
 2. Камень побеждает ножницы («камень затупляет или ломает ножницы»).
@@ -55,7 +54,7 @@ def search_winner(vibor_igroka, vibor_pc) -> None:
         print("""Ты проиграл(((
         \nБумага обёртывает камень
         """)
-    elif vibor_igroka  == 2 and vibor_pc == 1:
+    elif vibor_igroka == 2 and vibor_pc == 1:
         print("""Ты проиграл(((
         \nКамень затупляет или ломает ножницы
         """)
@@ -86,22 +85,24 @@ def main() -> None:
         print("\nудачи!")
 
 
+# Создал классы для сбора статистики  p.s другого варианта не нашел.
 class Player:
     def __init__(self, name):
         self.name = name
         self.vibor_igroka = players_choice()
+
 
 class PC:
     def __init__(self):
         self.vibor_pc = computer_choice()
 
 
-
 print(hello_and_question)  # Приветствие
 if input("") == "1":
     print(rules)
-Mi = Player(input('Введи свои имя или никнейм(Это нужно для статистики)\n'))
-p = PC()
-vibor_igroka = Mi.vibor_igroka
-vibor_pc = p.vibor_pc
+
+players_data: Player = Player(input('Введи свои имя или никнейм(Это нужно для статистики)\n'))
+pc_data = PC()
+vibor_igroka = players_data.vibor_igroka
+vibor_pc = pc_data.vibor_pc
 main()
