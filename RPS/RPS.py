@@ -44,44 +44,40 @@ def computer_choice() -> int:
 
 # Функция находит победителя
 # Просто огромное кол-во иф(другой способ слишком сложно искать)
-def search_winner(player_choice, computer_chose) -> None:
-    if player_choice == computer_chose:
+def search_winner(vibor_igroka, vibor_pc) -> None:
+    if vibor_igroka == vibor_pc:
         print("Ничья")
-    elif player_choice == 1 and computer_chose == 2:
+    elif vibor_igroka == 1 and vibor_pc == 2:
         print("""Ты победил!!!
         \nКамень затупляет или ломает ножницы
         """)
-    elif player_choice == 1 and computer_chose == 3:
+    elif vibor_igroka == 1 and vibor_pc == 3:
         print("""Ты проиграл(((
         \nБумага обёртывает камень
         """)
-    elif player_choice == 2 and computer_chose == 1:
+    elif vibor_igroka  == 2 and vibor_pc == 1:
         print("""Ты проиграл(((
         \nКамень затупляет или ломает ножницы
         """)
-    elif player_choice == 2 and computer_chose == 3:
+    elif vibor_igroka == 2 and vibor_pc == 3:
         print("""Ты победил!!!
         \nНожницы разрезают бумагу
         """)
-    elif player_choice == 3 and computer_chose == 1:
+    elif vibor_igroka == 3 and vibor_pc == 1:
         print("""Ты победил!!!
         \nБумага обёртывает камень
         """)
-    elif player_choice == 3 and computer_chose == 2:
+    elif vibor_igroka == 3 and vibor_pc == 2:
         print("""Ты проиграл(((
         \nНожницы разрезают бумагу
         """)
 
 
 def play() -> None:
-    if input("") == "1":
-        print(rules)
-    search_winner(players_choice(), computer_choice())
+    search_winner(vibor_igroka, vibor_pc)
 
 
 def main() -> None:
-    print(hello_and_question)  # Приветствие
-    m = Player(input('Введи свои имя или никнейм(Это нужно для статистики)\n'))
     play_again = ''  # Что бы запустить игру. Потом его изменить и выйти.
     while play_again.lower() != '-':  # проверка на выход из игры работает после 2-го раза
         play()  # запуск игры
@@ -95,9 +91,17 @@ class Player:
         self.name = name
         self.vibor_igroka = players_choice()
 
+class PC:
+    def __init__(self):
+        self.vibor_pc = computer_choice()
 
-# Выбор игрока
 
-print(main())
 
-# можно попробовать создать класс игры и что бы эти функции его меняли!!!
+print(hello_and_question)  # Приветствие
+if input("") == "1":
+    print(rules)
+Mi = Player(input('Введи свои имя или никнейм(Это нужно для статистики)\n'))
+p = PC()
+vibor_igroka = Mi.vibor_igroka
+vibor_pc = p.vibor_pc
+main()
