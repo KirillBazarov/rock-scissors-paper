@@ -19,14 +19,3 @@ conn = engine.connect()
 
 add_game_data = statistics.insert().values(name, player_chose, computer_chose)
 conn.execute(add_game_data)
-
-# add_book_query = books.insert().values(title='learn Py',
-#                                        id_author=1,
-#                                        genre='Education',
-#                                        price=1299)
-# conn.execute(add_book_query)
-# add_book_query_sec = books.insert().values(title='Clear Py',
-#                                            id_author=1,
-#                                            genre='Education',
-#                                            price=956)
-# conn.execute(add_book_query_sec)
