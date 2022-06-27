@@ -85,17 +85,16 @@ def main() -> None:
         print("\nудачи!")
 
 
-
 class Game_data(object):
     def __init__(self, name):
         self.name = name
         self.vibor_igroka = players_choice()
         self.vibor_pc = computer_choice()
 
+
 print(hello_and_question)  # Приветствие
 if input("") == "1":
     print(rules)
-
 
 players_data: Game_data = Game_data(input('Введи свои имя или никнейм(Это нужно для статистики)\n'))
 vibor_igroka = players_data.vibor_igroka
