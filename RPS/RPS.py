@@ -41,6 +41,12 @@ def computer_choice() -> int:
     return computer_chose
 
 
+def hi():
+    print(hello_and_question)  # Приветствие
+    if input("") == "1":
+        print(rules)
+
+
 # Функция находит победителя
 # Просто огромное кол-во иф(другой способ слишком сложно искать)
 def search_winner(vibor_igroka, vibor_pc) -> None:
@@ -73,10 +79,9 @@ def search_winner(vibor_igroka, vibor_pc) -> None:
 
 
 def main() -> None:
-
     play_again = ''  # Что бы запустить игру. Потом его изменить и выйти.
     while play_again.lower() != '-':  # проверка на выход из игры работает после 2-го раза
-        search_winner(vibor_igroka,vibor_pc)  # запуск игры
+        search_winner(vibor_igroka, vibor_pc)  # запуск игры
         play_again = input("Хочешь сыграть еще раз (если нет то введи - ) ")
     else:
         print("\nудачи!")
@@ -89,11 +94,10 @@ class Game_data(object):
         self.vibor_pc = computer_choice()
 
 
-print(hello_and_question)  # Приветствие
-if input("") == "1":
-    print(rules)
-
+hi()
 players_data: Game_data = Game_data(input('Введи свои имя или никнейм(Это нужно для статистики)\n'))
 vibor_igroka = players_data.vibor_igroka
 vibor_pc = players_data.vibor_pc
+
+
 main()
