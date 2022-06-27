@@ -49,7 +49,7 @@ def computer_choice() -> int:
     return computer_chose
 
 
-# просто вывод приветсвия и вопрос нужны ли правила
+# просто вывод приветствия и вопрос нужны ли правила
 def hi() -> None:
     print(hello_and_question)  # Приветствие
     if input("") == "1":
