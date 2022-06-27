@@ -85,24 +85,19 @@ def main() -> None:
         print("\nудачи!")
 
 
-# Создал классы для сбора статистики  p.s другого варианта не нашел.
-class Player:
+
+class Game_data(object):
     def __init__(self, name):
         self.name = name
         self.vibor_igroka = players_choice()
-
-
-class PC:
-    def __init__(self):
         self.vibor_pc = computer_choice()
-
 
 print(hello_and_question)  # Приветствие
 if input("") == "1":
     print(rules)
 
-players_data: Player = Player(input('Введи свои имя или никнейм(Это нужно для статистики)\n'))
-pc_data = PC()
+
+players_data: Game_data = Game_data(input('Введи свои имя или никнейм(Это нужно для статистики)\n'))
 vibor_igroka = players_data.vibor_igroka
-vibor_pc = pc_data.vibor_pc
+vibor_pc = players_data.vibor_pc
 main()
