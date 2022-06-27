@@ -16,6 +16,14 @@ rules = '''Победитель определяется по следующим
 Если игроки показали одинаковый знак, то засчитывается ничья и игра или раунд переигрывается.'''
 
 
+# Класс сделанный для хранения статистики
+class Game_data(object):
+    def __init__(self, name):
+        self.name = name
+        self.vibor_igroka = players_choice()
+        self.vibor_pc = computer_choice()
+
+
 # Выбор игрока
 def players_choice() -> int:
     player_chose = int(input('''
@@ -41,7 +49,8 @@ def computer_choice() -> int:
     return computer_chose
 
 
-def hi():
+# просто вывод приветсвия и вопрос нужны ли правила
+def hi() -> None:
     print(hello_and_question)  # Приветствие
     if input("") == "1":
         print(rules)
@@ -76,24 +85,15 @@ def search_winner(vibor_igroka, vibor_pc) -> None:
         print("""Ты проиграл(((
         \nНожницы разрезают бумагу
         """)
+    else:
+        print("ты что-то не так ввел")
 
 
 def main() -> None:
-    play_again = ''  # Что бы запустить игру. Потом его изменить и выйти.
-    while play_again.lower() != '-':  # проверка на выход из игры работает после 2-го раза
-        vibor_igroka = players_data.vibor_igroka
-        vibor_pc = players_data.vibor_pc
-        search_winner(vibor_igroka, vibor_pc)  # запуск игры
-        play_again = '-'
-    else:
-        print("\nудачи!")
-
-
-class Game_data(object):
-    def __init__(self, name):
-        self.name = name
-        self.vibor_igroka = players_choice()
-        self.vibor_pc = computer_choice()
+    vibor_igroka = players_data.vibor_igroka
+    vibor_pc = players_data.vibor_pc
+    search_winner(vibor_igroka, vibor_pc)
+    print("\nудачи!")
 
 
 hi()

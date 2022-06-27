@@ -18,3 +18,6 @@ conn = engine.connect()
 add_game_data = statistics.insert().values(name=players_data.name, player_choice=players_data.vibor_igroka,
                                            computer_choice=players_data.vibor_pc, )
 conn.execute(add_game_data)
+
+
+
