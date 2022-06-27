@@ -72,14 +72,11 @@ def search_winner(vibor_igroka, vibor_pc) -> None:
         """)
 
 
-def play() -> None:
-    search_winner(vibor_igroka, vibor_pc)
-
-
 def main() -> None:
+
     play_again = ''  # Что бы запустить игру. Потом его изменить и выйти.
     while play_again.lower() != '-':  # проверка на выход из игры работает после 2-го раза
-        play()  # запуск игры
+        search_winner(vibor_igroka,vibor_pc)  # запуск игры
         play_again = input("Хочешь сыграть еще раз (если нет то введи - ) ")
     else:
         print("\nудачи!")
