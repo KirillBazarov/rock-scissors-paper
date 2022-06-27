@@ -35,8 +35,7 @@ def players_choice() -> int:
     if player_chose in [1, 2, 3]:  # Проверка на нужные числа
         print(f"Ты выбрал {RPS.get(player_chose)}")
         return player_chose
-    else:
-        print("Ты ввел не то число)))")
+    print("Ты ввел не то число)))")
 
 
 # Дает случайное число от 1 до 3. Которое обозначает камень, ножницы или бумагу.
