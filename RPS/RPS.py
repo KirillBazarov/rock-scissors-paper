@@ -81,8 +81,10 @@ def search_winner(vibor_igroka, vibor_pc) -> None:
 def main() -> None:
     play_again = ''  # Что бы запустить игру. Потом его изменить и выйти.
     while play_again.lower() != '-':  # проверка на выход из игры работает после 2-го раза
+        vibor_igroka = players_data.vibor_igroka
+        vibor_pc = players_data.vibor_pc
         search_winner(vibor_igroka, vibor_pc)  # запуск игры
-        play_again = input("Хочешь сыграть еще раз (если нет то введи - ) ")
+        play_again = '-'
     else:
         print("\nудачи!")
 
@@ -96,8 +98,6 @@ class Game_data(object):
 
 hi()
 players_data: Game_data = Game_data(input('Введи свои имя или никнейм(Это нужно для статистики)\n'))
-vibor_igroka = players_data.vibor_igroka
-vibor_pc = players_data.vibor_pc
 
 
 main()
